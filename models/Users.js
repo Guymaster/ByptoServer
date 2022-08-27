@@ -6,8 +6,13 @@ const Users = mongoose.Schema({
     prenom:{type:String, require:true},
     email:{type:String , require :true,unique:true},
     password:{type:String , require :true},
+    wallets: {
+        usdt: {
+            key: {type:String , require :true}
+        }
+    }
 })
 
     Users.plugin(uniqueValidator)
 
-module.exports = mongoose.model('Users',Users)
+module.exports = mongoose.model('users',Users)
